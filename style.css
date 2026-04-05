@@ -141,11 +141,17 @@ header {
 #buscador {
     width: 100%;
     padding: 12px 20px;
+    padding-left: 45px; /* Espacio para la lupa */
     border-radius: 25px;
-    border: 2px solid #e5e7eb;
+    border: 2px solid #facc15; /* El dorado LeopardX */
     font-size: 1rem;
     outline: none;
     transition: border-color 0.3s;
+       
+    /* El icono de la lupa */
+    background-image: url('https://img.icons8.com/ios/20/6b7280/search--v1.png');
+    background-repeat: no-repeat;
+    background-position: 15px center;
 }
 
 #buscador:focus {
