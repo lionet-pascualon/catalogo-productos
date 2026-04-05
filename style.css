@@ -33,6 +33,9 @@ header {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+.logo span {
+    color: #facc15; /* El dorado para la X de LeopardX */
+}
 
 /* Grilla de Productos con Espaciado de Ingeniería */
 .grid-productos {
@@ -148,3 +151,5 @@ header {
 #buscador:focus {
     border-color: #2563eb; /* El azul que venimos usando */
 }
+.filtro { display: none !important; }
+
