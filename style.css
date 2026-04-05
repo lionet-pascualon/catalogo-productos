@@ -128,3 +128,23 @@ header {
 .btn-wa:hover {
     background-color: #128c7e;
 }
+
+.contenedor-buscador {
+    padding: 20px 5%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#buscador {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 2px solid #e5e7eb;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#buscador:focus {
+    border-color: #2563eb; /* El azul que venimos usando */
+}
