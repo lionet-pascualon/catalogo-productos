@@ -152,6 +152,7 @@ header {
     background-image: url('https://img.icons8.com/ios/20/6b7280/search--v1.png');
     background-repeat: no-repeat;
     background-position: 15px center;
+    background-color: white;
 }
 
 #buscador:focus {
