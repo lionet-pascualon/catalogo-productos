@@ -47,7 +47,7 @@
     <div class="info">
         <h3>Auriculares AKG - Sonido Premium</h3>
         <p>Calidad de audio profesional, diseño ergonómico y bajos potentes.</p>
-        <span class="tags" style="display: none;">auricular akg samsung cable musica sonido audio premium</span>
+        <span class="tags" style="display: none;">auriculares akg samsung cable musica sonido audio premium</span>
         <div class="precio">$6.000</div>
         <a href="https://wa.me/3512366414?text=Hola!%20Me%20interesan%20los%20auriculares%20AKG" class="btn-wa" target="_blank">Consultar WhatsApp</a>
     </div>
@@ -59,7 +59,7 @@
     <div class="info">
         <h3>TWS M90 Pro - Inalámbricos</h3>
         <p>Bluetooth 5.3, estuche de carga con pantalla LED y sonido envolvente.</p>
-        <span class="tags" style="display: none;">tws m90 pro inalambrico bluetooth gamer musica auriculares bateria</span>
+        <span class="tags" style="display: none;">auriculares tws m90 pro inalambrico bluetooth gamer musica bateria</span>
         <div class="precio">$13.000</div>
         <a href="https://wa.me/3512366414?text=Hola!%20Me%20interesan%20los%20TWS%20M90%20Pro" class="btn-wa" target="_blank">Consultar WhatsApp</a>
     </div>
@@ -116,5 +116,31 @@
 </a>
     <script src="script.js"></script>
 
+<script>
+function filtrar(categoria) {
+    // 1. Buscamos todas las tarjetas de productos
+    const tarjetas = document.querySelectorAll('.card');
+    
+    // 2. Buscamos todos los botones para sacarles el brillo al que no está activo
+    const botones = document.querySelectorAll('.btn-filtro');
+    botones.forEach(btn => btn.classList.remove('active'));
+
+    // 3. Recorremos cada tarjeta para ver si la mostramos o la ocultamos
+    tarjetas.forEach(tarjeta => {
+        // Obtenemos el texto de las etiquetas (tags) que pusimos en cada producto
+        const etiquetas = tarjeta.querySelector('.tags').innerText.toLowerCase();
+        
+        if (categoria === 'todos') {
+            tarjeta.style.display = "block"; // Mostrar todo
+        } else if (etiquetas.includes(categoria)) {
+            tarjeta.style.display = "block"; // Mostrar si coincide la categoría
+        } else {
+            tarjeta.style.display = "none";  // Ocultar si no coincide
+        }
+    });
+}
+</script>
+
+    
 </body>
 </html>
