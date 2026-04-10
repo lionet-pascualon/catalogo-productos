@@ -221,6 +221,60 @@
       });
     }, { threshold: 0.1 });
     cards.forEach(card => observer.observe(card));
+  
+  let carrito = [];
+let productoActual = {};
+
+// Datos detallados (esto podrías ampliarlo por cada producto)
+const detallesProductos = {
+  "Auriculares AKG": { desc: "Sonido de estudio profesional.", specs: ["Cable reforzado", "Cancelación pasiva", "Bajos profundos"] },
+  "Smartwatch Inteligente": { desc: "Tu compañero de salud ideal.", specs: ["Sensor cardíaco", "Resistente al agua IP68", "Batería 7 días"] }
+};
+
+function abrirModal(titulo, precio, img) {
+  productoActual = { titulo, precio, img };
+  document.getElementById('modalTitle').innerText = titulo;
+  document.getElementById('modalPrice').innerText = precio;
+  document.getElementById('modalImg').src = img;
+  
+  const infoExtra = detallesProductos[titulo] || { desc: "Producto de alta calidad LeopardX.", specs: ["Garantía oficial"] };
+  document.getElementById('modalDesc').innerText = infoExtra.desc;
+  
+  const specsUl = document.getElementById('modalSpecs');
+  specsUl.innerHTML = infoExtra.specs.map(s => `<li>🔹 ${s}</li>`).join('');
+  
+  document.getElementById('productModal').style.display = 'block';
+}
+
+function agregarAlCarritoDesdeModal() {
+  carrito.push(productoActual);
+  actualizarCarrito();
+  document.getElementById('productModal').style.display = 'none';
+  toggleCart(); // Abre el carrito para mostrar que se agregó
+}
+
+function actualizarCarrito() {
+  const cartCount = document.getElementById('cartCount');
+  const cartItems = document.getElementById('cartItems');
+  cartCount.innerText = carrito.length;
+  
+  cartItems.innerHTML = carrito.map((item, index) => `
+    <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+      <span>${item.titulo}</span>
+      <span>${item.precio}</span>
+    </div>
+  `).join('');
+}
+
+function toggleCart() {
+  document.getElementById('cartPanel').classList.toggle('open');
+}
+
+// Cerrar modal al tocar la X
+document.querySelector('.close-modal').onclick = () => {
+  document.getElementById('productModal').style.display = 'none';
+};
+  
   </script>
 
     <div id="productModal" class="modal">
