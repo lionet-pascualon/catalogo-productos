@@ -9,9 +9,7 @@
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════
-       NAVBAR
-  ═══════════════════════════════════════ -->
+  <!-- NAVBAR -->
   <header class="navbar">
     <div class="navbar-inner">
       <a href="#inicio" class="logo">LeopardX</a>
@@ -35,9 +33,7 @@
     </div>
   </header>
 
-  <!-- ═══════════════════════════════════════
-       HERO
-  ═══════════════════════════════════════ -->
+  <!-- HERO -->
   <section class="hero" id="inicio">
     <div class="hero-glow"></div>
     <div class="hero-grid-lines"></div>
@@ -49,18 +45,15 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════
-       PRODUCTOS
-  ═══════════════════════════════════════ -->
+  <!-- PRODUCTOS -->
   <section class="productos-section" id="productos">
     <div class="section-header">
       <h2 class="section-title">Nuestros Productos</h2>
-      <p class="section-sub">Consultanos por WhatsApp con un solo clic</p>
+      <p class="section-sub">Tocá un producto para ver más detalles</p>
     </div>
 
     <div class="grid" id="productGrid">
 
-      <!-- CARD: Auriculares AKG -->
       <div class="card" data-categoria="auricular"
            onclick="abrirModal('Auriculares AKG','$6.000','auricular.akg.jpg')">
         <div class="card-img">
@@ -74,16 +67,12 @@
           <p class="card-desc">Calidad de audio profesional, diseño ergonómico y bajos potentes.</p>
           <div class="card-footer">
             <span class="card-price">$6.000</span>
-            <a class="card-btn"
-               href="https://wa.me/3512366414?text=Hola!%20Me%20interesan%20los%20auriculares%20AKG"
-               target="_blank"
-               onclick="event.stopPropagation()">Consultar</a>
+            <button class="card-btn" onclick="event.stopPropagation(); abrirModal('Auriculares AKG','$6.000','auricular.akg.jpg')">Ver más</button>
           </div>
         </div>
         <div class="tags" style="display:none">auriculares akg audio premium</div>
       </div>
 
-      <!-- CARD: TWS M90 Pro -->
       <div class="card" data-categoria="auricular"
            onclick="abrirModal('TWS M90 Pro','$13.000','tws.M90.pro.inal.jpg')">
         <div class="card-img">
@@ -97,16 +86,12 @@
           <p class="card-desc">Bluetooth 5.3, estuche con pantalla LED y sonido envolvente.</p>
           <div class="card-footer">
             <span class="card-price">$13.000</span>
-            <a class="card-btn"
-               href="https://wa.me/3512366414?text=Hola!%20Me%20interesan%20los%20TWS%20M90%20Pro"
-               target="_blank"
-               onclick="event.stopPropagation()">Consultar</a>
+            <button class="card-btn" onclick="event.stopPropagation(); abrirModal('TWS M90 Pro','$13.000','tws.M90.pro.inal.jpg')">Ver más</button>
           </div>
         </div>
         <div class="tags" style="display:none">auriculares tws m90 inalambrico bluetooth</div>
       </div>
 
-      <!-- CARD: Smartwatch -->
       <div class="card" data-categoria="smartwatch"
            onclick="abrirModal('Smartwatch Inteligente','$19.000','smartwach.jpg')">
         <div class="card-img">
@@ -119,16 +104,12 @@
           <p class="card-desc">Notificaciones, salud, deportes y pantalla táctil HD.</p>
           <div class="card-footer">
             <span class="card-price">$19.000</span>
-            <a class="card-btn"
-               href="https://wa.me/3512366414?text=Hola!%20Me%20interesa%20el%20Smartwatch"
-               target="_blank"
-               onclick="event.stopPropagation()">Consultar</a>
+            <button class="card-btn" onclick="event.stopPropagation(); abrirModal('Smartwatch Inteligente','$19.000','smartwach.jpg')">Ver más</button>
           </div>
         </div>
         <div class="tags" style="display:none">smartwatch reloj inteligente salud deporte</div>
       </div>
 
-      <!-- CARD: Parlante Greatnice -->
       <div class="card" data-categoria="parlante"
            onclick="abrirModal('Parlante Greatnice RGB','$12.000','parlante.greatnice.jpg')">
         <div class="card-img">
@@ -141,16 +122,12 @@
           <p class="card-desc">Potencia y luces LED. Ideal para llevar la música a todos lados.</p>
           <div class="card-footer">
             <span class="card-price">$12.000</span>
-            <a class="card-btn"
-               href="https://wa.me/3512366414?text=Hola!%20Me%20interesa%20el%20parlante%20Greatnice"
-               target="_blank"
-               onclick="event.stopPropagation()">Consultar</a>
+            <button class="card-btn" onclick="event.stopPropagation(); abrirModal('Parlante Greatnice RGB','$12.000','parlante.greatnice.jpg')">Ver más</button>
           </div>
         </div>
         <div class="tags" style="display:none">parlante greatnice bluetooth luces musica</div>
       </div>
 
-      <!-- CARD: Proyector Astronauta -->
       <div class="card" data-categoria="lampara"
            onclick="abrirModal('Proyector Astronauta','$15.500','proyector.astronauta.jpg')">
         <div class="card-img">
@@ -163,10 +140,7 @@
           <p class="card-desc">Nebulosa galáctica con control remoto. Ideal como regalo.</p>
           <div class="card-footer">
             <span class="card-price">$15.500</span>
-            <a class="card-btn"
-               href="https://wa.me/3512366414?text=Hola!%20Me%20interesa%20el%20Proyector%20Astronauta"
-               target="_blank"
-               onclick="event.stopPropagation()">Consultar</a>
+            <button class="card-btn" onclick="event.stopPropagation(); abrirModal('Proyector Astronauta','$15.500','proyector.astronauta.jpg')">Ver más</button>
           </div>
         </div>
         <div class="tags" style="display:none">lampara proyector galaxia estrellas regalo</div>
@@ -177,9 +151,7 @@
     <p class="no-result" id="noResult" style="display:none;">No hay productos en esta categoría aún.</p>
   </section>
 
-  <!-- ═══════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════ -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-top">
       <div class="footer-brand">
@@ -198,34 +170,30 @@
         </a>
       </div>
     </div>
-
-    <!-- NEWSLETTER con Formspree — reemplazá YOUR_FORM_ID con tu ID real -->
     <div class="footer-newsletter">
       <p class="newsletter-label">Recibí ofertas exclusivas</p>
-      <form
-        class="newsletter-form"
-        action="https://formspree.io/f/xkoplepe"
-        method="POST"
-        id="newsletterForm">
+      <form class="newsletter-form" action="https://formspree.io/f/xkoplepe" method="POST" id="newsletterForm">
         <input type="email" name="email" placeholder="Tu email..." class="newsletter-input" required/>
         <button type="submit" class="newsletter-btn">Suscribirme</button>
       </form>
-      <p class="newsletter-ok" id="newsletterOk" style="display:none;">
-        ¡Gracias! Te anotamos 🎉
-      </p>
+      <p class="newsletter-ok" id="newsletterOk" style="display:none;">¡Gracias! Te anotamos 🎉</p>
     </div>
-
     <div class="footer-bottom">
       <p>© 2026 LeopardX · Desarrollado por Milton</p>
     </div>
   </footer>
 
-  <!-- ═══════════════════════════════════════
-       MODAL DE PRODUCTO
-  ═══════════════════════════════════════ -->
+  <!-- ═══════════════ MODAL ═══════════════ -->
   <div id="productModal" class="modal" onclick="cerrarModalFuera(event)">
     <div class="modal-content">
-      <button class="close-modal" onclick="cerrarModal()" aria-label="Cerrar">&times;</button>
+
+      <!-- Botón cerrar — grande y visible en móvil -->
+      <button class="close-modal" onclick="cerrarModal()" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
+
       <div class="modal-body">
         <img id="modalImg" src="" alt="Producto"/>
         <div class="modal-info">
@@ -233,17 +201,33 @@
           <p id="modalDesc"></p>
           <ul id="modalSpecs"></ul>
           <div class="modal-price" id="modalPrice"></div>
-          <a id="modalWaBtn" class="btn-primary" href="#" target="_blank">
-            Consultar por WhatsApp
-          </a>
+
+          <!-- Botones de acción -->
+          <div class="modal-actions">
+            <button class="btn-carrito" onclick="agregarAlCarrito()">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="flex-shrink:0">
+                <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 14.1 5.9 15 7 15h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 20 3H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+              </svg>
+              Agregar al carrito
+            </button>
+            <a id="modalWaBtn" class="btn-whatsapp" href="#" target="_blank">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="flex-shrink:0">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.534 5.845L.057 23.998l6.305-1.654A11.954 11.954 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.643-.518-5.148-1.418l-.368-.219-3.821 1.002.981-3.736-.24-.386A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+              </svg>
+              Consultar por WhatsApp
+            </a>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════
-       CARRITO FLOTANTE
-  ═══════════════════════════════════════ -->
+  <!-- Overlay carrito (para cerrar tocando afuera en móvil) -->
+  <div id="cartOverlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+  <!-- CARRITO FLOTANTE -->
   <div id="cartIcon" class="cart-float" onclick="toggleCart()" role="button" aria-label="Ver carrito">
     <svg viewBox="0 0 24 24" width="26" height="26" fill="var(--navy-deep)">
       <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 14.1 5.9 15 7 15h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 20 3H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
@@ -258,12 +242,18 @@
       <button class="cart-close" onclick="toggleCart()" aria-label="Cerrar carrito">&times;</button>
     </div>
     <div id="cartItems" class="cart-items"></div>
-    <div class="cart-total-container">
-      Total estimado: <span id="cartTotal">$0</span>
+    <div class="cart-footer-panel">
+      <div class="cart-total-container">
+        Total estimado: <span id="cartTotal">$0</span>
+      </div>
+      <a id="cartWaBtn" class="btn-finalizar" href="#" target="_blank">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="flex-shrink:0">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.534 5.845L.057 23.998l6.305-1.654A11.954 11.954 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.643-.518-5.148-1.418l-.368-.219-3.821 1.002.981-3.736-.24-.386A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+        </svg>
+        Finalizar por WhatsApp
+      </a>
     </div>
-    <a id="cartWaBtn" class="btn-primary" href="#" target="_blank">
-      Finalizar por WhatsApp
-    </a>
   </div>
 
   <!-- WhatsApp flotante -->
@@ -271,11 +261,8 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="28" height="28"/>
   </a>
 
-  <!-- ═══════════════════════════════════════
-       SCRIPTS
-  ═══════════════════════════════════════ -->
   <script>
-    /* ── Datos detallados por producto ── */
+    /* ─── Datos detallados ─── */
     const detallesProductos = {
       "Auriculares AKG": {
         desc: "Sonido de estudio profesional. Ideal para música, gaming y llamadas.",
@@ -302,9 +289,10 @@
     let carrito = [];
     let productoActual = {};
 
-    /* ── Modal ── */
+    /* ─── Modal ─── */
     function abrirModal(titulo, precio, img) {
       productoActual = { titulo, precio, img };
+
       document.getElementById('modalTitle').innerText = titulo;
       document.getElementById('modalPrice').innerText = precio;
       document.getElementById('modalImg').src = img;
@@ -318,9 +306,8 @@
       document.getElementById('modalSpecs').innerHTML =
         info.specs.map(s => `<li>${s}</li>`).join('');
 
-      const waText = encodeURIComponent(`Hola! Me interesa: ${titulo} (${precio})`);
-      document.getElementById('modalWaBtn').href =
-        `https://wa.me/3512366414?text=${waText}`;
+      const waText = encodeURIComponent(`Hola! Me interesa el producto: ${titulo} — Precio: ${precio}`);
+      document.getElementById('modalWaBtn').href = `https://wa.me/3512366414?text=${waText}`;
 
       document.getElementById('productModal').style.display = 'flex';
       document.body.style.overflow = 'hidden';
@@ -339,13 +326,28 @@
       if (e.key === 'Escape') cerrarModal();
     });
 
-    /* ── Carrito ── */
+    /* ─── Carrito ─── */
     function agregarAlCarrito() {
       if (!productoActual.titulo) return;
+
+      // Animación de feedback en el botón
+      const btn = document.querySelector('.btn-carrito');
+      const textoOriginal = btn.innerHTML;
+      btn.innerHTML = '✓ ¡Agregado!';
+      btn.style.background = '#2a7a3b';
+      setTimeout(() => {
+        btn.innerHTML = textoOriginal;
+        btn.style.background = '';
+      }, 1200);
+
       carrito.push({ ...productoActual });
       actualizarCarrito();
-      cerrarModal();
-      toggleCart();
+
+      // Cerrar modal y abrir carrito con pequeño delay para la animación
+      setTimeout(() => {
+        cerrarModal();
+        abrirCarrito();
+      }, 900);
     }
 
     function eliminarDelCarrito(index) {
@@ -360,13 +362,20 @@
       const cartWaBtn = document.getElementById('cartWaBtn');
 
       cartCount.innerText = carrito.length;
+      // Animación del contador
+      cartCount.classList.remove('bump');
+      void cartCount.offsetWidth; // fuerza reflow
+      cartCount.classList.add('bump');
 
       if (carrito.length === 0) {
         cartItems.innerHTML = '<p class="cart-empty">Tu carrito está vacío</p>';
         cartTotal.innerText = '$0';
         cartWaBtn.href = '#';
+        cartWaBtn.classList.add('disabled');
         return;
       }
+
+      cartWaBtn.classList.remove('disabled');
 
       let total = 0;
       cartItems.innerHTML = carrito.map((item, i) => {
@@ -374,27 +383,55 @@
         total += valor;
         return `
           <div class="cart-item">
+            <img class="cart-item-img" src="${item.img}" alt="${item.titulo}"/>
             <div class="cart-item-info">
               <span class="cart-item-name">${item.titulo}</span>
               <span class="cart-item-price">${item.precio}</span>
             </div>
-            <button class="cart-item-remove" onclick="eliminarDelCarrito(${i})" aria-label="Eliminar">✕</button>
+            <button class="cart-item-remove" onclick="eliminarDelCarrito(${i})" aria-label="Eliminar">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+              </svg>
+            </button>
           </div>`;
       }).join('');
 
       cartTotal.innerText = `$${total.toLocaleString('es-AR')}`;
 
-      const listaWa = carrito.map(i => `• ${i.titulo} (${i.precio})`).join('%0A');
-      const totalWa = `$${total.toLocaleString('es-AR')}`;
-      cartWaBtn.href =
-        `https://wa.me/3512366414?text=Hola!%20Quiero%20consultar%20por:%0A${listaWa}%0A%0ATotal%20estimado:%20${totalWa}`;
+      // Mensaje de WhatsApp con TODOS los artículos y el total
+      const fecha = new Date().toLocaleDateString('es-AR');
+      const lineas = carrito.map((item, i) => `${i + 1}. ${item.titulo} — ${item.precio}`).join('%0A');
+      const totalStr = `$${total.toLocaleString('es-AR')}`;
+      const mensaje =
+        `Hola! Quiero consultar por los siguientes productos:%0A%0A` +
+        `${lineas}%0A%0A` +
+        `💰 Total estimado: *${totalStr}*%0A` +
+        `📅 Fecha: ${fecha}`;
+      cartWaBtn.href = `https://wa.me/3512366414?text=${mensaje}`;
+    }
+
+    function abrirCarrito() {
+      document.getElementById('cartPanel').classList.add('open');
+      document.getElementById('cartOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function cerrarCarrito() {
+      document.getElementById('cartPanel').classList.remove('open');
+      document.getElementById('cartOverlay').classList.remove('open');
+      document.body.style.overflow = '';
     }
 
     function toggleCart() {
-      document.getElementById('cartPanel').classList.toggle('open');
+      const panel = document.getElementById('cartPanel');
+      if (panel.classList.contains('open')) {
+        cerrarCarrito();
+      } else {
+        abrirCarrito();
+      }
     }
 
-    /* ── Filtros del navbar ── */
+    /* ─── Filtros navbar ─── */
     const navLinks = document.querySelectorAll('[data-filter]');
     const cards    = document.querySelectorAll('.card');
     const noResult = document.getElementById('noResult');
@@ -419,7 +456,7 @@
       });
     });
 
-    /* ── Buscador ── */
+    /* ─── Buscador ─── */
     document.addEventListener('keyup', e => {
       if (e.target.matches('#buscador')) {
         const texto = e.target.value.toLowerCase();
@@ -439,7 +476,7 @@
       }
     });
 
-    /* ── Hamburger ── */
+    /* ─── Hamburger ─── */
     const hamburger  = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     hamburger.addEventListener('click', () => {
@@ -447,25 +484,20 @@
       hamburger.classList.toggle('open');
     });
 
-    /* ── Newsletter con Formspree ──
-       Enviamos con fetch para mostrar mensaje sin recargar la página */
+    /* ─── Newsletter Formspree ─── */
     const newsletterForm = document.getElementById('newsletterForm');
     if (newsletterForm) {
       newsletterForm.addEventListener('submit', async function (e) {
         e.preventDefault();
         const btn   = this.querySelector('button');
         const datos = new FormData(this);
-
         btn.textContent = 'Enviando...';
         btn.disabled = true;
-
         try {
           const res = await fetch(this.action, {
-            method: 'POST',
-            body: datos,
+            method: 'POST', body: datos,
             headers: { 'Accept': 'application/json' }
           });
-
           if (res.ok) {
             this.style.display = 'none';
             document.getElementById('newsletterOk').style.display = 'block';
@@ -480,7 +512,7 @@
       });
     }
 
-    /* ── Animación scroll para cards ── */
+    /* ─── Animación cards al scroll ─── */
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('card-visible');
@@ -488,11 +520,8 @@
     }, { threshold: 0.1 });
     cards.forEach(card => observer.observe(card));
 
-    /* ── Mostrar cards al cargar ── */
     document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.card').forEach(card => {
-        card.classList.add('card-show');
-      });
+      document.querySelectorAll('.card').forEach(card => card.classList.add('card-show'));
     });
   </script>
 
