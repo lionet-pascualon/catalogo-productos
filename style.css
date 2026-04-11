@@ -479,3 +479,49 @@ img { max-width: 100%; display: block; }
   .modal-body img { width: 100%; max-height: 200px; }
   .modal-price { font-size: 1.6rem; }
 }
+
+.calidad-garantia {
+    background: linear-gradient(135deg, var(--navy-deep) 0%, #0a0f1a 100%);
+    padding: 40px 20px;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    margin-top: 50px;
+    text-align: center;
+}
+
+.garantia-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.garantia-icon {
+    font-size: 40px;
+    filter: drop-shadow(0 0 10px var(--gold));
+}
+
+.garantia-text h3 {
+    color: var(--gold);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.garantia-text p {
+    color: #cbd5e1; /* Un gris claro para que sea legible */
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Para que en PC se vea uno al lado del otro */
+@media (min-width: 768px) {
+    .garantia-content {
+        flex-direction: row;
+        text-align: left;
+    }
+}
