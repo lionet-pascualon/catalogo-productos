@@ -35,3 +35,23 @@ function filtrar(categoria) {
         }
     });
 }
+
+function filterProducts(type) {
+    // Cambiar estilo de botones
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    if (type === 'others') {
+        // Mostrar el aviso de compromiso
+        document.getElementById('warningModal').style.display = 'block';
+    } else {
+        // Aquí luego pondremos la lógica para filtrar tus productos
+        console.log("Cargando productos oficiales...");
+    }
+}
+
+function closeWarning() {
+    document.getElementById('warningModal').style.display = 'none';
+}
+
