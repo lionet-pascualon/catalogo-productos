@@ -103,6 +103,42 @@ img { max-width: 100%; display: block; }
 }
 .mobile-link:hover { color: var(--gold); padding-left: 6px; }
 
+/* Esto asegura que los links queden a la izquierda y el login a la derecha */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Empuja el login al extremo */
+    align-items: center;
+    padding: 15px 5%;
+    background: #000;
+}
+
+.auth-container {
+    display: flex;
+    align-items: center;
+}
+
+.login-btn {
+    background: transparent;
+    border: 2px solid #ffb300;
+    color: #ffb300;
+    padding: 10px 20px;
+    border-radius: 50px; /* Forma de píldora, muy moderno */
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-btn:hover {
+    background: #ffb300;
+    color: #000;
+    box-shadow: 0 0 15px rgba(255, 179, 0, 0.4);
+    transform: translateY(-2px); /* Un pequeño saltito al pasar el mouse */
+}
+
 /* ═══ HERO ═══ */
 .hero {
   position: relative; overflow: hidden;
