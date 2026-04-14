@@ -250,6 +250,22 @@
     </div>
   </div>
 
+<div id="authModal" class="warning-modal"> <div class="modal-content">
+        <span class="close-btn" onclick="closeAuth()">&times;</span>
+        <h2 id="authTitle">Crear Cuenta</h2>
+        
+        <form id="authForm">
+            <input type="email" id="authEmail" placeholder="Tu Correo Electrónico" required>
+            <input type="password" id="authPassword" placeholder="Contraseña (mín. 6 caracteres)" required>
+            
+            <button type="submit" id="authBtn" class="btn-accept">Registrarse</button>
+        </form>
+
+        <p id="authSwitch">¿Ya tienes cuenta? <span onclick="toggleAuthMode()">Inicia Sesión</span></p>
+        <p id="authError" style="color: #ff4444; font-size: 0.8rem; margin-top: 10px;"></p>
+    </div>
+</div>
+  
   <!-- ═══════════════════════════════════════
        MODAL DE PRODUCTO
   ═══════════════════════════════════════ -->
