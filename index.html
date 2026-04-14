@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Catálogo de Productos | LeopardX</title>
+  <title>Catálogo de Productos | LeopardX</title>  
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 </head>
@@ -46,12 +46,16 @@
   </section>
 
   <!-- PRODUCTOS -->
-  <section class="productos-section" id="productos">
-    <div class="section-header">
-      <h2 class="section-title">Nuestros Productos</h2>
-      <p class="section-sub">Tocá un producto para ver más detalles</p>
+    <div class="modal-content">
+    <h3>🚀 LeopardX Community</h3>
+    <p>Estás explorando productos de <strong>vendedores independientes</strong> que forman parte de nuestra red.</p>
+    <div class="info-box">
+        <p>✅ Vendedores calificados por la comunidad.</p>
+        <p>📦 Gestión de envío a cargo del vendedor.</p>
     </div>
-
+    <button class="btn-accept" onclick="closeWarning()">¡Quiero ver!</button>
+</div>
+    
     <div class="grid" id="productGrid">
 
       <div class="card" data-categoria="auricular"
@@ -181,7 +185,7 @@
     <div class="footer-bottom">
       <p>© 2026 LeopardX · Desarrollado por Milton</p>
     </div>
-
+    
    <section class="trust-badge-section">
   <div class="container-trust">
     <div class="trust-card">
@@ -195,8 +199,16 @@
     </div>
   </div>
 </section>
-  
-  </footer>
+
+  <footer>
+    <div class="footer-legal">
+        <a href="terminos.html" style="color: var(--gold); text-decoration: none; font-size: 0.8rem;">
+            Términos y Condiciones para Vendedores
+        </a>
+    </div>
+</footer>
+
+    </footer>
 
   <!-- ═══════════════ MODAL ═══════════════ -->
   <div id="productModal" class="modal" onclick="cerrarModalFuera(event)">
