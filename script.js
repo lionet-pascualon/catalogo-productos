@@ -229,3 +229,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.querySelectorAll('.card').forEach(card => observer.observe(card));
 });
+
+// Agregá esto al final de tu script.js para forzar que las cards se vean
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.style.display = 'block';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+    });
+});
+
+
