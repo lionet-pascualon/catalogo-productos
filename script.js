@@ -36,18 +36,18 @@ function filtrar(categoria) {
     });
 }
 
-function filterProducts(type) {
-    // Cambiar estilo de botones
+function filterProducts(type, event) {
+    // 1. Manejo visual de los botones
     const buttons = document.querySelectorAll('.tab-btn');
     buttons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+    event.currentTarget.classList.add('active');
 
+    // 2. Lógica del cartel
     if (type === 'others') {
-        // Mostrar el aviso de compromiso
         document.getElementById('warningModal').style.display = 'block';
     } else {
-        // Aquí luego pondremos la lógica para filtrar tus productos
-        console.log("Cargando productos oficiales...");
+        // Aquí volvería a mostrar solo tus productos
+        console.log("Mostrando catálogo oficial");
     }
 }
 
@@ -55,3 +55,10 @@ function closeWarning() {
     document.getElementById('warningModal').style.display = 'none';
 }
 
+// Cerrar el cartel si el usuario hace clic fuera de la caja negra
+window.onclick = function(event) {
+    const modal = document.getElementById('warningModal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
