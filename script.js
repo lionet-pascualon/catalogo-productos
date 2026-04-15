@@ -60,7 +60,7 @@ const detallesProductos = {
   }
 };
 
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem('carritoLeopardX')) || [];
 let productoActual = {};
 
 /* ═══════════════════════════════════════
@@ -203,7 +203,9 @@ function cerrarCarrito() {
 function toggleCart() {
   const panel = document.getElementById('cartPanel');
   panel.classList.contains('open') ? cerrarCarrito() : abrirCarrito();
+localStorage.setItem('carritoLeopardX', JSON.stringify(carrito));
 }
+
 
 /* ═══════════════════════════════════════
    PESTAÑAS — NUESTROS / OTROS VENDEDORES
@@ -362,4 +364,5 @@ cards.forEach(card => cardObserver.observe(card));
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.card').forEach(card => card.classList.add('card-show'));
+
 });
