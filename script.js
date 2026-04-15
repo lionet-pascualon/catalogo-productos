@@ -62,6 +62,9 @@ const detallesProductos = {
 
 let carrito = JSON.parse(localStorage.getItem('carritoLeopardX')) || [];
 let productoActual = {};
+document.addEventListener('DOMContentLoaded', () => {
+    actualizarCarrito();
+});
 
 /* ═══════════════════════════════════════
    MODAL DE PRODUCTO
@@ -198,6 +201,8 @@ function cerrarCarrito() {
   document.getElementById('cartPanel').classList.remove('open');
   document.getElementById('cartOverlay').classList.remove('open');
   document.body.style.overflow = '';
+
+localStorage.setItem('carritoLeopardX', JSON.stringify(carrito));
 }
 
 function toggleCart() {
