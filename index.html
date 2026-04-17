@@ -157,10 +157,15 @@
     import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
     // Tu configuración (Pegala acá)
-    const firebaseConfig = { 
-        apiKey: "TU_API_KEY",
-        // ... el resto
-    };
+const firebaseConfig = {
+    apiKey: "AIzaSyDA4oxTvYgrv7NKdhreFq_0eJFQ8EKlCUA",
+    authDomain: "leopardx.firebaseapp.com",
+    projectId: "leopardx",
+    storageBucket: "leopardx.firebasestorage.app",
+    messagingSenderId: "20322051861",
+    appId: "1:20322051861:web:3764871bfc4b7f30b96b1c",
+    measurementId: "G-XM9ZQT2ZM7"
+  };
 
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
@@ -207,5 +212,17 @@
 
   <script src="script.js"></script>
 
+<div id="warningModal" class="product-modal" onclick="cerrarWarningFuera(event)">
+  <div class="auth-modal-content" style="max-width: 400px; text-align: center;">
+    <div style="font-size: 40px; margin-bottom: 15px;">🛡️</div>
+    <h3 style="color: var(--gold); margin-bottom: 10px;">Aviso de Seguridad</h3>
+    <p style="font-size: 14px; opacity: 0.8; line-height: 1.5;">
+      Estás explorando productos de <strong>vendedores independientes</strong>. 
+      LeopardX no se hace responsable por transacciones fuera de nuestra tienda oficial.
+    </p>
+    <button class="auth-submit" style="margin-top: 20px;" onclick="cerrarWarning()">Entendido</button>
+  </div>
+</div>
+  
 </body>
 </html>
