@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LeopardX | Catálogo Tecnológico</title>
+  <title>LeopardX | Tienda Tecnológica</title>
+  
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 </head>
@@ -13,54 +14,84 @@
     <div class="navbar-inner">
       <a href="#inicio" class="logo">LeopardX</a>
       <nav class="nav-links">
-        <a href="#inicio" class="nav-link active">Inicio</a>
-        <a href="#productos" class="nav-link">Productos</a>
+        <a href="#inicio" class="nav-link active" data-filter="all">Inicio</a>
+        <span class="nav-link" data-filter="Auriculares">Auriculares</span>
+        <span class="nav-link" data-filter="Relojes">Relojes</span>
+        <span class="nav-link" data-filter="Parlantes">Parlantes</span>
       </nav>
       
       <div class="auth-nav" id="authNav">
         <button class="auth-nav-btn" id="btnOpenAuth" onclick="openAuth()">Ingresar</button>
         <div class="auth-user" id="authUser" style="display:none">
           <span class="auth-avatar" id="authAvatar">?</span>
-          <span class="auth-email" id="authEmailDisplay"></span>
-          <button class="auth-logout" id="btnLogout" onclick="cerrarSesion()">Salir</button>
+          <button class="auth-logout" id="btnLogout">Salir</button>
         </div>
       </div>
+
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#" class="mobile-link" data-filter="all">Todos los productos</a>
+      <a href="#" class="mobile-link" data-filter="Auriculares">Auriculares</a>
+      <a href="#" class="mobile-link" data-filter="Relojes">Relojes</a>
     </div>
   </header>
 
   <section class="hero" id="inicio">
+    <div class="hero-glow"></div>
+    <div class="hero-grid-lines"></div>
     <div class="hero-content">
-      <h1 class="hero-title">Bienvenido a<br><span class="hero-brand">LeopardX</span></h1>
-      <p class="hero-subtitle">Tecnología cargada desde la nube en tiempo real</p>
-      <a href="#productos" class="hero-btn">Ver catálogo</a>
+      <p class="hero-eyebrow">Tecnología de Vanguardia</p>
+      <h1 class="hero-title">LEOPARD<span class="hero-brand">X</span></h1>
+      <p class="hero-subtitle">Equipamiento premium para tu setup digital.</p>
+      
+      <div class="search-box" style="max-width: 400px; margin: 0 auto;">
+        <input type="text" id="buscador" class="newsletter-input" style="width: 100%;" placeholder="¿Qué estás buscando?">
+      </div>
     </div>
   </section>
 
-  <section class="productos-section" id="productos">
+  <div class="product-filter-container">
+    <div class="tabs">
+      <button class="tab-btn active" onclick="filterProducts('nuestros', event)">Nuestros Productos</button>
+      <button class="tab-btn" onclick="filterProducts('others', event)">Otros Vendedores</button>
+    </div>
+  </div>
+
+  <main class="productos-section">
     <div class="section-header">
-      <h2 class="section-title">Nuestros Productos</h2>
-      <p class="section-sub">Información actualizada desde Firestore</p>
+      <h2 id="sectionTitle" class="section-title">Nuestros Productos</h2>
+      <p id="sectionSub" class="section-sub">Tocá un producto para ver más detalles</p>
     </div>
 
-    <div class="grid" id="productGrid">
-        </div>
-  </section>
+    <div id="productGrid" class="grid"></div>
+    
+    <div id="othersGrid" class="grid" style="display:none">
+       <div class="other-empty">Todavía no hay vendedores independientes en tu zona.</div>
+    </div>
 
-  <footer class="footer">
-    <p>© 2026 LeopardX · Desarrollado por Milton Pascualon</p>
-  </footer>
+    <div id="noResult" class="no-result" style="display:none">
+      No encontramos productos que coincidan con tu búsqueda.
+    </div>
+  </main>
 
   <div id="productModal" class="product-modal" onclick="cerrarModalFuera(event)">
     <div class="modal-content">
       <button class="close-modal" onclick="cerrarModal()">×</button>
       <div class="modal-body">
-        <img id="modalImg" src="" alt=""/>
+        <img id="modalImg" src="" alt="">
         <div class="modal-info">
           <h2 id="modalTitle"></h2>
           <p id="modalDesc"></p>
           <ul id="modalSpecs"></ul>
-          <div class="modal-price" id="modalPrice"></div>
-          <button class="btn-carrito" onclick="agregarAlCarrito()">Agregar al carrito</button>
+          <p class="modal-price" id="modalPrice"></p>
+          <div class="modal-actions">
+            <button class="btn-carrito" onclick="agregarAlCarrito()">Agregar al Carrito</button>
+            <a id="modalWaBtn" href="#" target="_blank" class="btn-whatsapp">Consultar por WhatsApp</a>
+          </div>
         </div>
       </div>
     </div>
@@ -69,105 +100,112 @@
   <div id="authModal" class="auth-modal" onclick="cerrarAuthFuera(event)">
     <div class="auth-modal-content">
       <button class="auth-close" onclick="closeAuth()">×</button>
-      <h2 class="auth-title" id="authTitle">Crear Cuenta</h2>
-      <form id="authForm" onsubmit="return false">
-        <input type="email" id="authEmail" placeholder="Tu email..." required />
-        <input type="password" id="authPassword" placeholder="Tu contraseña..." required />
-        <p class="auth-error" id="authError"></p>
-        <button type="submit" class="auth-submit" id="authBtn" onclick="submitAuth()">Registrarse</button>
+      <div class="auth-logo">LeopardX</div>
+      <h3 class="auth-title" id="authModalTitle">Iniciar Sesión</h3>
+      <p class="auth-subtitle">Accedé para gestionar tus compras.</p>
+      
+      <form class="auth-form" id="authForm">
+        <input type="email" id="authEmail" placeholder="Tu email" required>
+        <input type="password" id="authPassword" placeholder="Tu contraseña" required>
+        <div id="authError" class="auth-error"></div>
+        <button type="submit" class="auth-submit" id="authSubmitBtn">Entrar</button>
       </form>
-      <p class="auth-switch" id="authSwitch">
-        ¿Ya tenés cuenta? <span onclick="toggleAuthMode()">Iniciá Sesión</span>
+      
+      <p class="auth-switch">
+        <span id="toggleAuthMode">¿No tenés cuenta? Registrate</span>
       </p>
     </div>
   </div>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+  <div id="cartOverlay" class="cart-overlay" onclick="toggleCart()"></div>
+  <div class="cart-float" onclick="toggleCart()">
+    <span id="cartCount">0</span>
+    🛒
+  </div>
+  <div id="cartPanel" class="cart-panel">
+    <div class="cart-header">
+      <h3>Mi Carrito</h3>
+      <button class="cart-close" onclick="toggleCart()">×</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer-panel">
+      <div class="cart-total-container">Total: <span id="cartTotal">$0</span></div>
+      <a id="cartWaBtn" href="#" target="_blank" class="btn-finalizar">Finalizar pedido (WhatsApp)</a>
+    </div>
+  </div>
 
-    const firebaseConfig = {
-        apiKey: "AIzaSyDA4oxTvYgrv7NKdhreFq_0eJFQ8EKlCUA",
-        authDomain: "leopardx.firebaseapp.com",
-        projectId: "leopardx",
-        storageBucket: "leopardx.firebasestorage.app",
-        messagingSenderId: "20322051861",
-        appId: "1:20322051861:web:3764871bfc4b7f30b96b1c"
+  <a href="https://wa.me/3512366414" class="whatsapp-float" target="_blank">
+    <svg viewBox="0 0 32 32" width="30" height="30" fill="white"><path d="M16 0C7.16 0 0 7.16 0 16c0 2.82.74 5.58 2.14 8L0 32l8.22-2.14c2.34 1.28 5.06 1.96 7.78 1.96 8.84 0 16-7.16 16-16S24.84 0 16 0z"/></svg>
+  </a>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <div class="footer-logo">LeopardX</div>
+      <p>Córdoba, Argentina | UTN</p>
+      <p>Contacto: <a href="mailto:miltonpascualon@gmail.com" style="color: var(--gold);">miltonpascualon@gmail.com</a></p>
+      <div style="margin-top: 10px;">
+        <a href="#" class="footer-terms">Términos y Condiciones</a> · 
+        <a href="#" class="footer-terms">Privacidad</a>
+      </div>
+      <p style="margin-top: 15px; opacity: 0.5;">© 2026 LeopardX - Proyecto Académico</p>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+    // Tu configuración (Pegala acá)
+    const firebaseConfig = { 
+        apiKey: "TU_API_KEY",
+        // ... el resto
     };
 
     const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
     const db = getFirestore(app);
+    const auth = getAuth(app);
 
-    // --- FUNCIÓN PARA CARGAR PRODUCTOS ---
-    window.cargarProductosDesdeFirebase = async function() {
-        const contenedor = document.getElementById('productGrid');
-        try {
-            const querySnapshot = await getDocs(collection(db, "productos"));
-            contenedor.innerHTML = ""; // Limpiamos la grilla
-            
-            querySnapshot.forEach((doc) => {
-                const p = doc.data();
-                const estaAgotado = p.stock <= 0;
-                
-                contenedor.innerHTML += `
-                    <div class="card ${estaAgotado ? 'producto-agotado' : ''}" 
-                         onclick="${estaAgotado ? '' : `abrirModal('${p.nombre}','$${p.precio}','${p.img}')`}">
-                        <div class="card-img">
-                            <img src="${p.img}" alt="${p.nombre}">
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title">${p.nombre}</h3>
-                            <div class="card-footer">
-                                <span class="card-price">$${p.precio.toLocaleString('es-AR')}</span>
-                                <button class="card-btn" ${estaAgotado ? 'disabled' : ''}>
-                                    ${estaAgotado ? 'Sin Stock' : 'Ver más'}
-                                </button>
-                            </div>
-                        </div>
-                    </div>`;
-            });
-        } catch (e) { console.error("Error cargando productos:", e); }
-    };
+    // Función para cargar productos de Firestore
+    async function cargarProductos() {
+      const grid = document.getElementById('productGrid');
+      const querySnapshot = await getDocs(collection(db, "productos"));
+      grid.innerHTML = "";
 
-    // --- LÓGICA DE AUTENTICACIÓN ---
-    let isLoginMode = false;
-    window.toggleAuthMode = () => {
-        isLoginMode = !isLoginMode;
-        document.getElementById('authTitle').innerText = isLoginMode ? "Iniciar Sesión" : "Crear Cuenta";
-        document.getElementById('authBtn').innerText = isLoginMode ? "Entrar" : "Registrarse";
-    };
+      querySnapshot.forEach((doc) => {
+        const p = doc.data();
+        const estaAgotado = p.stock === 0;
+        
+        grid.innerHTML += `
+          <div class="card ${estaAgotado ? 'producto-agotado' : ''}" data-categoria="${p.categoria}">
+            <div class="card-img">
+              <img src="${p.img}" alt="${p.nombre}">
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3 class="card-title">${p.nombre}</h3>
+                ${p.nuevo ? '<span class="card-badge badge-new">NUEVO</span>' : ''}
+              </div>
+              <div class="card-footer">
+                <span class="card-price">$${p.precio.toLocaleString('es-AR')}</span>
+                <button class="card-btn" onclick="abrirModal('${p.nombre}', '$${p.precio.toLocaleString('es-AR')}', '${p.img}')" ${estaAgotado ? 'disabled' : ''}>
+                  ${estaAgotado ? 'Sin Stock' : 'Ver más'}
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+    }
 
-    window.submitAuth = async () => {
-        const email = document.getElementById('authEmail').value;
-        const pass = document.getElementById('authPassword').value;
-        try {
-            isLoginMode ? await signInWithEmailAndPassword(auth, email, pass) : await createUserWithEmailAndPassword(auth, email, pass);
-            closeAuth();
-        } catch (err) { document.getElementById('authError').innerText = "Error en los datos"; }
-    };
+    // Ejecutar al cargar
+    document.addEventListener('DOMContentLoaded', cargarProductos);
 
+    // Lógica básica de Auth (puedes expandirla)
     window.cerrarSesion = () => signOut(auth);
-
-    // OBSERVER: Qué pasa cuando el usuario entra/sale
-    onAuthStateChanged(auth, user => {
-        const btnOpen = document.getElementById('btnOpenAuth');
-        const authUser = document.getElementById('authUser');
-        if (user) {
-            btnOpen.style.display = 'none';
-            authUser.style.display = 'flex';
-            document.getElementById('authEmailDisplay').innerText = user.email;
-            document.getElementById('authAvatar').innerText = user.email[0].toUpperCase();
-        } else {
-            btnOpen.style.display = '';
-            authUser.style.display = 'none';
-        }
-        // Cargamos los productos siempre al iniciar
-        cargarProductosDesdeFirebase();
-    });
   </script>
 
   <script src="script.js"></script>
+
 </body>
 </html>
