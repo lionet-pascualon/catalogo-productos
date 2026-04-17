@@ -196,14 +196,27 @@ img { max-width: 100%; display: block; }
   line-height: 2;
 }
 
+#productGrid {
+  min-height: 400px; /* Evita que el footer salte para arriba mientras cargan los datos */
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
+  gap: 1.5rem;
+}
+
 /* ═══ CARDS ═══ */
+
 .card {
-  position: relative; background: var(--navy-card);
-  border: 1px solid var(--navy-border); border-radius: var(--radius-lg);
-  overflow: hidden; box-shadow: var(--shadow-card); cursor: pointer;
-  opacity: 0; transform: translateY(18px);
-  transition: box-shadow var(--transition), transform var(--transition),
-              border-color var(--transition), opacity 0.4s ease;
+  position: relative; 
+  background: var(--navy-card);
+  border: 1px solid var(--navy-border); 
+  border-radius: var(--radius-lg);
+  overflow: hidden; 
+  box-shadow: var(--shadow-card); 
+  cursor: pointer;
+  /* Eliminamos opacity: 0 para que los productos de Firebase se vean apenas cargan */
+  opacity: 1; 
+  transform: none;
+  transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
 }
 .card-visible, .card-show { opacity: 1; transform: translateY(0); }
 .card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); border-color: var(--gold-border); }
@@ -623,6 +636,25 @@ img { max-width: 100%; display: block; }
   width: 100%; max-width: 380px;
   padding: 2.25rem 2rem 2rem;
   position: relative;
+}
+
+/* Ajuste para que los inputs del modal de Firebase se vean PRO */
+.auth-modal-content input {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 14px; 
+  color: var(--text-bright);
+  font-family: 'DM Sans', sans-serif;
+  outline: none; 
+  width: 100%;
+  margin-bottom: 1rem; /* Espacio entre email y password */
+  transition: border-color var(--transition);
+}
+
+.auth-modal-content input:focus {
+  border-color: var(--gold);
 }
 
 .auth-close {
