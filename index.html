@@ -153,27 +153,6 @@
     </div>
   </footer>
   
-    // Tu configuración (Pegala acá)
-const firebaseConfig = {
-    apiKey: "AIzaSyDA4oxTvYgrv7NKdhreFq_0eJFQ8EKlCUA",
-    authDomain: "leopardx.firebaseapp.com",
-    projectId: "leopardx",
-    storageBucket: "leopardx.firebasestorage.app",
-    messagingSenderId: "20322051861",
-    appId: "1:20322051861:web:3764871bfc4b7f30b96b1c",
-    measurementId: "G-XM9ZQT2ZM7"
-  };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    const auth = getAuth(app);
-
-    // Función para cargar productos de Firestore
-    async function cargarProductos() {
-      const grid = document.getElementById('productGrid');
-      const querySnapshot = await getDocs(collection(db, "productos"));
-      grid.innerHTML = "";
-
       querySnapshot.forEach((doc) => {
         const p = doc.data();
         const estaAgotado = p.stock === 0;
@@ -199,15 +178,8 @@ const firebaseConfig = {
         `;
       });
     }
-
-    // Ejecutar al cargar
-    document.addEventListener('DOMContentLoaded', cargarProductos);
-
-    // Lógica básica de Auth (puedes expandirla)
-    window.cerrarSesion = () => signOut(auth);
+  
   </script>
-
-  <script src="script.js"></script>
 
 <div id="warningModal" class="product-modal" onclick="cerrarWarningFuera(event)">
   <div class="auth-modal-content" style="max-width: 400px; text-align: center;">
