@@ -375,5 +375,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     actualizarCarrito();
-    cargarProductosDesdeFirebase(); // Esto trae tus productos de la nube
 });
