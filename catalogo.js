@@ -1,4 +1,4 @@
-import { db } from "./firebase.js";
+import { db } from "/LeopardX/firebase.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 export async function cargarProductos() {
